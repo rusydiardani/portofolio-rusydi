@@ -22,16 +22,32 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate API call
-    setTimeout(() => {
-      if (formData.name && formData.email && formData.message) {
+    // URL Formspree
+    const formspreeUrl = 'https://formspree.io/f/mykqwqow';
+
+    fetch(formspreeUrl, {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(formData)
+    })
+    .then(response => {
+      if (response.ok) {
         showToast('Message sent successfully! I will get back to you soon.', 'success');
         setFormData({ name: '', email: '', message: '' });
       } else {
-        showToast('Please fill out all fields.', 'error');
+        showToast('Oops! There was a problem sending your message.', 'error');
       }
+    })
+    .catch(error => {
+      console.error(error);
+      showToast('Error sending message. Please try again later.', 'error');
+    })
+    .finally(() => {
       setIsSubmitting(false);
-    }, 1000);
+    });
   };
 
   return (

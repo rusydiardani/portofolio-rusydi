@@ -63,7 +63,7 @@ const Home = () => {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="relative hidden lg:block"
+          className="relative mt-12 lg:mt-0 max-w-sm mx-auto lg:max-w-none"
         >
           <div className="absolute inset-0 bg-[var(--color-neo-primary)] rounded-full translate-x-4 translate-y-4 border-4 border-[var(--border-color)]"></div>
           <div className="relative aspect-square bg-[var(--color-neo-secondary)] rounded-full border-4 border-[var(--border-color)] overflow-hidden flex items-center justify-center">
