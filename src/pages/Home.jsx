@@ -49,11 +49,11 @@ const Home = () => {
             {roles}
           </p>
           
-          <div className="flex flex-wrap gap-4 pt-4">
-            <NavLink to="/projects" className="px-8 py-4 bg-[var(--color-neo-primary)] text-black font-bold text-xl border-4 border-[var(--border-color)] neo-shadow hover:neo-shadow-active transition-all uppercase">
+          <div className="flex flex-col sm:flex-row gap-4 pt-4">
+            <NavLink to="/projects" className="w-full sm:w-auto text-center px-8 py-4 bg-[var(--color-neo-primary)] text-black font-bold text-xl border-4 border-[var(--border-color)] neo-shadow hover:neo-shadow-active transition-all uppercase">
               View Projects
             </NavLink>
-            <NavLink to="/contact" className="px-8 py-4 bg-white text-black dark:bg-[var(--color-neo-dark-card)] dark:text-white font-bold text-xl border-4 border-[var(--border-color)] neo-shadow hover:neo-shadow-active transition-all uppercase">
+            <NavLink to="/contact" className="w-full sm:w-auto text-center px-8 py-4 bg-white text-black dark:bg-[var(--color-neo-dark-card)] dark:text-white font-bold text-xl border-4 border-[var(--border-color)] neo-shadow hover:neo-shadow-active transition-all uppercase">
               Contact Me
             </NavLink>
           </div>
@@ -63,7 +63,7 @@ const Home = () => {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="relative mt-12 lg:mt-0 max-w-sm mx-auto lg:max-w-none"
+          className="relative mt-12 lg:mt-0 w-64 sm:w-80 lg:w-full max-w-sm mx-auto lg:max-w-none"
         >
           <div className="absolute inset-0 bg-[var(--color-neo-primary)] rounded-full translate-x-4 translate-y-4 border-4 border-[var(--border-color)]"></div>
           <div className="relative aspect-square bg-[var(--color-neo-secondary)] rounded-full border-4 border-[var(--border-color)] overflow-hidden flex items-center justify-center">
@@ -78,7 +78,7 @@ const Home = () => {
           <motion.div 
             animate={{ y: [-10, 10, -10] }}
             transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
-            className="absolute top-10 -left-10 bg-white dark:bg-[#1A1A1A] border-4 border-[var(--border-color)] p-4 font-bold text-xl rotate-12 neo-shadow"
+            className="absolute top-4 -left-4 md:top-10 md:-left-10 bg-white dark:bg-[#1A1A1A] border-4 border-[var(--border-color)] p-2 md:p-4 font-bold text-base md:text-xl rotate-12 neo-shadow"
           >
             React
           </motion.div>
@@ -86,7 +86,7 @@ const Home = () => {
           <motion.div 
             animate={{ y: [10, -10, 10] }}
             transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-            className="absolute bottom-10 -right-10 bg-[var(--color-neo-accent)] text-white border-4 border-[var(--border-color)] p-4 font-bold text-xl -rotate-6 neo-shadow"
+            className="absolute bottom-4 -right-4 md:bottom-10 md:-right-10 bg-[var(--color-neo-accent)] text-white border-4 border-[var(--border-color)] p-2 md:p-4 font-bold text-base md:text-xl -rotate-6 neo-shadow"
           >
             Kotlin
           </motion.div>
